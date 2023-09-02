@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.conf import settings
+from django.utils import timezone
 import misaka
 
 from groups.models import Group
@@ -31,3 +32,12 @@ class Post(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey('posts.post',related_name='comments',on_delete=models.CASCADE)
+    user = models.CharField(max=200)
+    text = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+
+    def get_absolute_url(self):
+        return reverse('post_list')
+
+    def __str__(self):
+        return self.text
