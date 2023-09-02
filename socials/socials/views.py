@@ -8,3 +8,6 @@ class loggedOutPage(TemplateView):
 
 class HomePage(TemplateView):
     template_name = 'index.html'
+
+class PostListPage(TemplateView):
+    template_name = 'post_list.html'

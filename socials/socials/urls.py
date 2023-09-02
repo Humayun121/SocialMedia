@@ -25,6 +25,7 @@ urlpatterns = [
     path('accounts/',include('django.contrib.auth.urls')),
     path('loggedIn/',views.loggedInPage.as_view(),name='loggedIn'),
     path('loggedOut/',views.loggedOutPage.as_view(),name='loggedOut'),
+    path('posts/list/',views.PostListPage.as_view(),name='postList'),
     path('posts/',include('posts.urls',namespace='posts')),
     path('groups/',include('groups.urls',namespace='groups')),
 ]
