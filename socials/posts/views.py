@@ -6,6 +6,7 @@ from django.views import generic
 from django.http import Http404, HttpRequest, HttpResponse
 from braces.views import SelectRelatedMixin
 from django.contrib import messages
+from . import forms
 from django.core.exceptions import ObjectDoesNotExist
 from . import models
 
