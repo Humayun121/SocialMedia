@@ -9,6 +9,7 @@ from django.contrib import messages
 from . import forms
 from django.core.exceptions import ObjectDoesNotExist
 from . import models
+from posts.models import Post,Comment
 
 from django.shortcuts import redirect
 
@@ -79,4 +80,9 @@ class DeletePost(LoginRequiredMixin,SelectRelatedMixin,generic.DeleteView):
         return super().delete(*args, **kwargs)
     
 class PostDetailView(generic.DetailView):
-    model = models.Post
+    model = Post
+    select_related = ('user','group')
+
+
+def postList(request):
+    return render(request, 'posts/post_list.html')

@@ -5,4 +5,18 @@
 
 <h1>You are now logged in!</h1>
 
+{% for post in post_list %}
+    <h1>fdhewifheui</h1>
+    <div class="post">
+        <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+        <div class="user">
+            <strong>{{ post.user.username }}</strong>
+        </div>
+        
+        {% for comment in post.comments.all %}
+            <p>{{ comment }}</p>
+        {% endfor %}
+    </div>
+    {% endfor %}
+
 {% endblock %}
