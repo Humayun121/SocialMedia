@@ -9,6 +9,7 @@ from django.contrib import messages
 from . import forms
 from django.core.exceptions import ObjectDoesNotExist
 from . import models
+from django.views.generic import TemplateView
 from posts.models import Post,Comment
 
 from django.shortcuts import redirect
@@ -86,3 +87,7 @@ class PostDetailView(generic.DetailView):
 
 def postList(request):
     return render(request, 'posts/post_list.html')
+
+
+class postAll(TemplateView):
+    template_name = 'posts/post_all.html'
