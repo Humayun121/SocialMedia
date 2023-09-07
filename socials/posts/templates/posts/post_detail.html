@@ -7,7 +7,7 @@
     <br>
         {{comment.created_date}}
         <p>{{ comment.text|safe|linebreaks }}</p>
-        <p>Posted by: <strong>{{ comment.author }}</strong></p>
+        <p>Posted by: <strong>{{ comment.user }}</strong></p>
     {% empty %}
         <p>No comments posted</p>
     {% endfor %}
