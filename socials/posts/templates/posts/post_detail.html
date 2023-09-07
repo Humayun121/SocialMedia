@@ -3,9 +3,13 @@
 {% block post_content %}
 <div class="col-md-8">
     {% include "posts/_post.html" %}
-
     {% for comment in post.comments.all %}
-        <p>{{ comment }}</p>
+    <br>
+        {{comment.created_date}}
+        <p>{{ comment.text|safe|linebreaks }}</p>
+        <p>Posted by: <strong>{{ comment.author }}</strong></p>
+    {% empty %}
+        <p>No comments posted</p>
     {% endfor %}
 </div>
 {% endblock %}
