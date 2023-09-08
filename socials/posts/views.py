@@ -1,5 +1,5 @@
 from typing import Any
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404,redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views import generic
@@ -9,8 +9,10 @@ from django.contrib import messages
 from . import forms
 from django.core.exceptions import ObjectDoesNotExist
 from . import models
+from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
 from posts.models import Post,Comment
+from posts.forms import CommentForm
 
 from django.shortcuts import redirect
 
@@ -91,3 +93,18 @@ def postList(request):
 
 class postAll(TemplateView):
     template_name = 'posts/post_all.html'
+
+
+@login_required
+def add_comment_to_post(request,pk):
+    post = get_object_or_404(Post,pk=pk) #Get post object
+    if request.method == 'POST':
+        form = CommentForm(request.POST) #Pass in the request
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.save()
+            return redirect('posts:allPost')
+    else:
+        form = CommentForm()
+    return render(request,'posts/comment_form.html',{'form':form})
