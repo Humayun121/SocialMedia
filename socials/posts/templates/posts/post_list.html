@@ -41,6 +41,7 @@
 <div class="col-md-8">
 	{% for post in object_list %}
   		{% include "posts/_post.html" %}
+		<a href="{% url 'posts:view_comment' post.id %}">comment</a>
 
 		  {% for comment in post.comments.all %}
 		  <br>
@@ -51,5 +52,6 @@
 			  <p>No comments posted</p>
 		  {% endfor %}
 	{% endfor %}
+	
 </div>
 {% endblock %}

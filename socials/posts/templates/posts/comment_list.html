@@ -1,0 +1,14 @@
+{% extends "posts/post_base.html" %}
+
+{% block post_content %}
+{% for comment in object_list %} 
+    <br>
+    {{comment.created_date}}
+    <p>{{ comment.text|safe|linebreaks }}</p>
+    <p>Posted by: <strong>{{ comment.user }}</strong></p>
+{% empty %}
+    <p>No comments posted</p>    
+{% endfor %}
+{% endblock %}
+	
+
