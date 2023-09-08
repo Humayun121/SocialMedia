@@ -42,15 +42,6 @@
 	{% for post in object_list %}
   		{% include "posts/_post.html" %}
 		<a href="{% url 'posts:view_comment' post.id %}">comment</a>
-
-		  {% for comment in post.comments.all %}
-		  <br>
-			  {{comment.created_date}}
-			  <p>{{ comment.text|safe|linebreaks }}</p>
-			  <p>Posted by: <strong>{{ comment.user }}</strong></p>
-		  {% empty %}
-			  <p>No comments posted</p>
-		  {% endfor %}
 	{% endfor %}
 	
 </div>
