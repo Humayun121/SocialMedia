@@ -22,7 +22,7 @@
                     <li><a href="{% url 'posts:create' %}">Post Message</a></li>
                     <li><a href="{% url 'posts:allPost' %}">View Messages</a></li>
                     <li><a href="{% url 'groups:all' %}">Groups</a></li>
-                    <li><a href="#">Create Group</a></li>
+                    <li><a href="{% url 'groups:create' %}">Create Group</a></li>
                     <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
                 <!-- If they are not logged in -->
                 {% else %}
