@@ -2,6 +2,7 @@
 
 {% block post_content %}
 <div class="col-md-8">
+    
     {% include "posts/_post.html" %}
     {% for comment in post.comments.all %}
     <br>
