@@ -7,13 +7,17 @@ UserModel = get_user_model()
 
 # Create your models here.
 class User(auth.models.User, auth.models.PermissionsMixin):
-    user = models.OneToOneField(UserModel, on_delete=models.CASCADE)
+    user_profile = models.OneToOneField(
+        UserModel,
+        related_name='profile',
+        on_delete=models.CASCADE,
+        default=None
+    )
     followers = models.ManyToManyField(
         UserModel,
         related_name="following",
-        blank=True
-    )
-    
+        blank=True)
+
 
     def __str__(self):
         return f"@{self.username}"

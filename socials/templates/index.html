@@ -2,4 +2,20 @@
 {% block content %}
     <h1>Welcome to SocialMedia</h1>
     
+    {% if user_profile.user != request.user %}
+    {% if user_profile.user in request.user.profile.followers.all %}
+        <form method="POST" action="{% url 'accounts:unfollow_user' user_profile.user.id %}">
+            {% csrf_token %}
+            <button type="submit">Unfollow</button>
+        </form>
+    {% else %}
+        <form method="POST" action="{% url 'accounts:follow_user' 2 %}">
+            {% csrf_token %}
+            <button type="submit">Follow</button>
+        </form>
+    {% endif %}
+{% endif %}
+
+
+
 {% endblock %}
