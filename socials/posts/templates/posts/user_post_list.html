@@ -1,10 +1,30 @@
 {% extends "posts/post_base.html" %}
 
 {% block prepost %}
-<div class="col-md-4">
-	<h1>@{{ post_user.username }}</h1>
-	<p>Post History</p>
-</div>
+	<div class="col-md-4">
+		<h1>@{{ post_user.username }}</h1>
+		<p>Post History</p>
+	</div>
+
+	<div class="col-md-4">
+		{% if user_profile.user != request.user %}
+		{% if user_profile.user in request.user.profile.followers.all %}
+			<form method="POST" action="{% url 'accounts:unfollow_user' user_profile.user.id %}">
+				{% csrf_token %}
+				<button type="submit">Unfollow</button>
+			</form>
+		{% else %}
+			<form method="POST" action="{% url 'accounts:follow_user' 2 %}">
+				{% csrf_token %}
+				<button type="submit">Follow</button>
+			</form>
+		{% endif %}
+	{% endif %}
+	</div>
+	
+
+
+
 {% endblock %}
 
 {% block post_content %}
@@ -13,4 +33,9 @@
 		{% include "posts/_post.html" %}
 	{% endfor %}
 </div>
+{% endblock %}
+
+{% block post_post %}
+
+	
 {% endblock %}

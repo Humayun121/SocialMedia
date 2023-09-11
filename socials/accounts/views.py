@@ -22,11 +22,10 @@ UserModel = get_user_model()
 @login_required
 def follow_user(request, user_id):
     person_to_follow = get_object_or_404(UserModel, id=user_id)
+    print(person_to_follow)
     request.user.profile.followers.add(person_to_follow)
 
-    context = {'user_profile': user_profile}
-
-    return render(request, 'your_template.html', context)
+    return render(request, 'your_template.html')
 
 
 # Unfollow
