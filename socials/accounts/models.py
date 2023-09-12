@@ -5,21 +5,14 @@ from django.contrib.auth import get_user_model
 UserModel = get_user_model()
 
 
-# Create your models here.
-class User(auth.models.User, auth.models.PermissionsMixin):
-    user_profile = models.OneToOneField(
+class Followers(models.Model):
+    user = models.ForeignKey(
         UserModel,
-        related_name="profile",
-        on_delete=models.CASCADE, 
-        default=None
+        on_delete=models.CASCADE,
+        related_name="followers"
     )
-    followers = models.ManyToManyField(
-        UserModel, 
-        related_name="following", 
-        blank=True
+    follower = models.ForeignKey(
+        UserModel,
+        on_delete=models.CASCADE,
+        related_name="following"
     )
-
-
-
-    def __str__(self):
-        return f"@{self.username}"
