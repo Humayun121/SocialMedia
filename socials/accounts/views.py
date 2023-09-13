@@ -6,7 +6,7 @@ from django.shortcuts import render
 
 from django.shortcuts import get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from .models import User
+from .models import Followers
 
 
 class SignUp(CreateView):
@@ -23,14 +23,19 @@ UserModel = get_user_model()
 def follow_user(request, user_id):
     person_to_follow = get_object_or_404(UserModel, id=user_id)
     print(person_to_follow)
-    request.user.profile.followers.add(person_to_follow)
+    follower_instance, created = Followers.objects.get_or_create(
+        user=person_to_follow,
+        follower=request.user
+    )
+    print(follower_instance)
+    print(created)
 
-    return render(request, 'your_template.html')
+    return redirect("posts:allPost")
 
 
 # Unfollow
 @login_required
 def unfollow_user(request, user_id):
     person_to_unfollow = get_object_or_404(UserModel, id=user_id)
-    request.user.profile.followers.remove(person_to_unfollow)
+    request.user.followers.remove(person_to_unfollow)
     return redirect("posts:allPost")
