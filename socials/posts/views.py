@@ -126,3 +126,17 @@ class Comment(generic.ListView):
         return (
             super().get_queryset().filter(post_id=self.kwargs["post_id"])
         )  # self.kwargs gives the post id
+
+
+# FYP
+
+class Fyp(LoginRequiredMixin,generic.ListView):
+    model = Post
+    template_name = 'posts/post_list.html'
+
+    def get_queryset(self) -> QuerySet[Any]:
+        return super().get_queryset().filter(
+            user__in=self.request.user.following.all().values_list('user', flat=True)
+        )
+     #__in gives all users
+    
