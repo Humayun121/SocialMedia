@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tmp": "node-sass tmp.scss tmp.css"
+    "tmp": "node-sass tmp.scss tmp.css",
+    "compile_main": "sass --no-source-map soicals/src/sass/main.scss socials/static/css/base.css",
+    "watch:compile_main": "sass -w socials/src/sass/main.scss socials/static/css/base.css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^9.0.0"
+  },
+  "dependencies": {
+    "sass": "^1.67.0"
   }
 }
