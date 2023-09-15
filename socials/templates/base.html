@@ -17,15 +17,15 @@
         <div class="container">
             <a class="navbar-brand mynav" href="{% url 'home' %}">SocialMedia</a>
 
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="navbar nav-container topBotomBordersOut">
                 <!-- If they are logged in -->
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'posts:create' %}">Post Message</a></li>
-                    <li><a href="{% url 'posts:allPost' %}">View Messages</a></li>
-                    <li><a href="{% url 'posts:post_following' %}">FYP</a></li>
-                    <li><a href="{% url 'groups:all' %}">Groups</a></li>
-                    <li><a href="{% url 'groups:create' %}">Create Group</a></li>
-                    <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+                    <li class="navbar__space"><a href="{% url 'posts:create' %}">Post Message</a></li>
+                    <li class="navbar__space"><a href="{% url 'posts:allPost' %}">View Messages</a></li>
+                    <li class="navbar__space"><a href="{% url 'posts:post_following' %}">FYP</a></li>
+                    <li class="navbar__space"><a href="{% url 'groups:all' %}">Groups</a></li>
+                    <li class="navbar__space"><a href="{% url 'groups:create' %}">Create Group</a></li>
+                    <li class="navbar__space"><a href="{% url 'accounts:logout' %}">Logout</a></li>
                 <!-- If they are not logged in -->
                 {% else %}
                     <li><a href="#">Groups</a></li>
@@ -35,6 +35,8 @@
             </ul>
         </div>
     </nav>
+
+    
 
     <!-- CONTENT -->
     <div class="container mycontent">
