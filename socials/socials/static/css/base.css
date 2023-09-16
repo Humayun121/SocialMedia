@@ -3,7 +3,7 @@ body {
 }
 
 a {
-  color: #fff;
+  color: black;
 }
 
 .form-control {
@@ -91,12 +91,6 @@ h2 {
   width: 50%;
   font-size: 6rem;
   text-align: center;
-}
-
-h3 {
-  margin-top: 5rem;
-  width: 50%;
-  background-color: #faf9f9;
 }
 
 /* Top and Bottom borders go out */
