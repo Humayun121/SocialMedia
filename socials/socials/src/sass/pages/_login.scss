@@ -20,15 +20,19 @@
 }
 
 .form-group{
-    display: flex;
-    justify-content: center;
+    margin: 0 auto;
+    margin-left:18rem;
     
 }
 
 .btn-default {
-    margin-top: 12rem;
+    margin-top: 11rem;
     padding-right: 20rem;
     padding-top: 1rem;
     background-color: black;    
     color: #fff;
+}
+
+.control-label {
+    margin-right: 16rem;
 }
