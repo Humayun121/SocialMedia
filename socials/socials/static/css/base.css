@@ -50,7 +50,7 @@ a {
 }
 
 .form-control {
-  width: 20rem;
+  width: 29rem;
 }
 
 .signup_title {
@@ -65,6 +65,18 @@ a {
   margin-left: 20rem;
   background-color: black;
   color: #fff;
+}
+
+.btn-post_message {
+  width: 20rem;
+  margin-left: 18rem;
+  margin-top: 2rem;
+  background-color: black;
+}
+
+.post_form-title {
+  font-size: 2rem;
+  margin-left: 20rem;
 }
 
 h1 {
