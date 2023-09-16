@@ -79,13 +79,18 @@ a {
   margin-left: 20rem;
 }
 
+.create_group-title {
+  font-size: 2rem;
+  margin-left: 20rem;
+}
+
 h1 {
   color: #502C3E;
   height: 10rem;
   font-size: 6rem;
 }
 
-h2 {
+.black-background {
   color: #fff;
   background-color: black;
   width: 50%;
