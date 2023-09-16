@@ -2,8 +2,8 @@
 {% load bootstrap3 %}
 
 {% block content %}
-<div class="container">
-    <h1>Log in</h1>
+<div class="login_form">
+    <h1 class="login_form__title">Have an account?</h1>
     <form method="POST">
     {% csrf_token %}
     {% bootstrap_form form %}
