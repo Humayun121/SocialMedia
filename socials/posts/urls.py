@@ -15,7 +15,7 @@ urlpatterns = [
     path("<int:pk>/", views.PostDetailView.as_view(), name="detail"),
     path("new/", views.CreatePost.as_view(), name="create"),
     path(
-        "post/<pk>/comment/",
+        "post/<pk>/add_comment/",
         views.add_comment_to_post,
         name="add_comment_to_post",
     ),
