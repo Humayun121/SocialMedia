@@ -21,6 +21,7 @@ UserModel = get_user_model()
 # Follow
 @login_required
 def follow_user(request, user_id):
+
     person_to_follow = get_object_or_404(UserModel, id=user_id)
     print(person_to_follow)
     follower_instance, created = Followers.objects.get_or_create(
@@ -28,7 +29,7 @@ def follow_user(request, user_id):
         follower=request.user
     )
     print(follower_instance)
-    print(created)
+    print(created)  
 
     return redirect("posts:allPost")
 
