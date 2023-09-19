@@ -130,14 +130,21 @@ class Comment(generic.ListView):
 
 # FYP
 
-class Fyp(LoginRequiredMixin,generic.ListView):
+
+class Fyp(LoginRequiredMixin, generic.ListView):
     model = Post
-    template_name = 'posts/post_list.html' #Reusing the template
+    template_name = "posts/post_list.html"  # Reusing the template
 
     def get_queryset(self) -> QuerySet[Any]:
-        return super().get_queryset().filter(
-            user__in=self.request.user.following.all().values_list('user', flat=True)
+        return (
+            super()
+            .get_queryset()
+            .filter(
+                user__in=self.request.user.following.all().values_list(
+                    "user", flat=True
+                )
+            )
         )
-     #__in gives all users
-     #Values_list gives the users
-    
+
+    # __in gives all users
+    # Values_list gives the users
