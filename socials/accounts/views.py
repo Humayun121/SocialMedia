@@ -38,5 +38,5 @@ def follow_user(request, user_id):
 @login_required
 def unfollow_user(request, user_id):
     person_to_unfollow = get_object_or_404(UserModel, id=user_id)
-    request.user.followers.delete(person_to_unfollow)
+    request.user.followers.remove(person_to_unfollow)
     return redirect("posts:allPost")
