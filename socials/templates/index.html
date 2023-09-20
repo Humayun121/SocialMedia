@@ -1,11 +1,16 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block content %}
     <h1>Welcome to SocialMedia</h1>
 
     <h2 class="black-background">THE SOCIAL WALL <br>FOR EVERYONE</h2>
-
     
-    
-
+    <img class="home_pic1" src="{% static 'img/homepage.jpg' %}" alt="">
+    <img class="home_pic2" src="{% static 'img/homapage2.jpg' %}" alt="">
+    <img class="home_pic3" src="{% static 'img/homepage3.jpg' %}" alt="">
+    <img class="home_pic4" src="{% static 'img/homepage4.jpg' %}" alt="">
 
 {% endblock %}
+
+

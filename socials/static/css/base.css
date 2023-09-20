@@ -1,0 +1,168 @@
+body {
+  background-image: linear-gradient(to right, #d3cce3, #e9e4f0);
+}
+
+a {
+  color: black;
+}
+
+.form-control {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.login_form {
+  margin: 0 auto;
+  text-align: center;
+  background-color: #fff;
+  width: 40%;
+  height: 35rem;
+}
+.login_form__title {
+  padding-top: 5rem;
+  font-size: 3rem;
+}
+
+.form-group {
+  margin: 0 auto;
+  margin-left: 14rem;
+}
+
+.btn-default {
+  margin-top: 11rem;
+  padding-right: 20rem;
+  padding-top: 1rem;
+  background-color: black;
+  color: #fff;
+}
+
+.control-label {
+  margin-right: 16rem;
+}
+
+.signup_form {
+  margin: 0 auto;
+  flex-direction: column;
+  background-color: #fff;
+  width: 60%;
+}
+
+.form-control {
+  width: 29rem;
+}
+
+.signup_title {
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 5rem;
+}
+
+.btn-default-title {
+  margin-top: 1rem;
+  padding-right: 20rem;
+  margin-left: 20rem;
+  background-color: black;
+  color: #fff;
+}
+
+.btn-post_message {
+  width: 20rem;
+  margin-left: 18rem;
+  margin-top: 2rem;
+  background-color: black;
+}
+
+.post_form-title {
+  font-size: 2rem;
+  margin-left: 20rem;
+}
+
+.create_group-title {
+  font-size: 2rem;
+  margin-left: 20rem;
+}
+
+.home_pic1 {
+  width: 20rem;
+  height: 15rem;
+  margin-left: 64rem;
+  margin-top: -15rem;
+}
+
+h1 {
+  color: black;
+  height: 10rem;
+  font-size: 6rem;
+}
+
+.black-background {
+  color: #fff;
+  background-color: black;
+  width: 50%;
+  font-size: 6rem;
+  text-align: center;
+}
+
+.btn-comment {
+  background-color: black;
+}
+
+/* Top and Bottom borders go out */
+.topBotomBordersOut a:before, .topBotomBordersOut a:after {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  content: "";
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.topBotomBordersOut a:before {
+  top: 0px;
+  transform: translateY(10px);
+}
+
+.topBotomBordersOut a:after {
+  bottom: 0px;
+  transform: translateY(-10px);
+}
+
+.topBotomBordersOut a:hover:before, .topBotomBordersOut a:hover:after {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 2rem;
+  list-style: none;
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
+  height: 8rem;
+}
+.navbar__space {
+  margin: 0rem 1rem;
+}
+
+.nav-container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nav-container a {
+  color: #FFF;
+  text-decoration: none;
+  font: 20px Raleway;
+  margin: 0px 10px;
+  padding: 10px 10px;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=base.css.map */

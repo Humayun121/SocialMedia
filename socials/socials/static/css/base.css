@@ -84,6 +84,38 @@ a {
   margin-left: 20rem;
 }
 
+.home_pic1 {
+  width: 20rem;
+  height: 15rem;
+  margin-left: 64rem;
+  margin-top: -15rem;
+  border: 4px solid #fff;
+}
+
+.home_pic2 {
+  width: 20rem;
+  height: 15rem;
+  margin-left: 85rem;
+  margin-top: -19rem;
+  border: 4px solid #fff;
+}
+
+.home_pic3 {
+  width: 20rem;
+  height: 15rem;
+  margin-left: 64rem;
+  margin-top: -2rem;
+  border: 4px solid #fff;
+}
+
+.home_pic4 {
+  width: 20rem;
+  height: 15rem;
+  margin-left: 85rem;
+  margin-top: -17rem;
+  border: 4px solid #fff;
+}
+
 h1 {
   color: black;
   height: 10rem;

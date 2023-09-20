@@ -128,6 +128,10 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "socials/static")]
 LOGIN_REDIRECT_URL = "loggedIn"
 LOGOUT_REDIRECT_URL = "loggedOut"
 
+# Media Folder Settings
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
