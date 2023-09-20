@@ -8,7 +8,7 @@
 
 	<div class="col-md-4">
 		{% if user_profile.user != request.user %}
-		{% if user_profile.user in request.user.profile.followers.all %}
+		{% if user_profile.user in request.user.profile.follow.all %}
 			<form method="POST" action="{% url 'accounts:unfollow_user' post_user.id %}">
 				{% csrf_token %}
 				<button type="submit">Unfollow</button>
